@@ -161,7 +161,9 @@ public class Demo : MonoBehaviour
 		rect.width = Screen.width * BRECIVE_TWEET_WIDTH;
 		rect.height = Screen.height * BRECIVE_TWEET_HEIGHT;
 
-		if(GUI.Button(rect, "Get Tweets")){}
+		if(GUI.Button(rect, "Get Tweets")){
+			StartCoroutine (Twitter.API.GetTimeline(2,"me",CONSUMER_KEY, CONSUMER_SECRET, m_AccessTokenResponse));		
+		}
 
     }
 

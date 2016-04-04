@@ -104,7 +104,10 @@ namespace Twitter
                     TokenSecret = Regex.Match(web.text, @"oauth_token_secret=([^&]+)").Groups[1].Value,
                     UserId = Regex.Match(web.text, @"user_id=([^&]+)").Groups[1].Value,
                     ScreenName = Regex.Match(web.text, @"screen_name=([^&]+)").Groups[1].Value
+						
                 };
+
+				Debug.Log (response);
 
                 if (!string.IsNullOrEmpty(response.Token) &&
                     !string.IsNullOrEmpty(response.TokenSecret) &&
@@ -224,12 +227,37 @@ namespace Twitter
                         callback(false);
                     }
                     else
-                    {
+                    {	
+						Debug.Log (web.text);
                         callback(true);
                     }
                 }
             }
         }
+
+		private const string GetTimelineURL = "https://api.twitter.com/1.1/statuses/home_timeline.json";
+
+		public static IEnumerator GetTimeline(int numTweets, string userId,string consumerKey, string consumerSecret, AccessTokenResponse response){
+
+			// parameters I add a count that will return that many tweets 
+			Dictionary<string, string> parameters = new Dictionary<string, string>();
+			//parameters.Add("count", numTweets);
+
+			WWWForm form = new WWWForm();
+			//form.AddField("count", numTweets);
+
+			//set up a header to authenticate 
+			var headers = new Dictionary<string, string>();
+			headers["Authorization"] = GetHeaderWithAccessToken("GET", GetTimelineURL, consumerKey, consumerSecret, response, parameters);
+
+			//get the timeline
+			WWW web = new WWW (GetTimelineURL,form.data, headers);
+			//yield waits for the download to complete before continuing 
+			yield return web;
+
+			Debug.Log (web.text);
+	
+		}
 
         #endregion
 
