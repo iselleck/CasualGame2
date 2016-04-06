@@ -1,15 +1,29 @@
 fileFormatVersion: 2
-guid: 66f773410ef69694fb8ad5f84a78f34d
-timeCreated: 1459534579
+guid: bcf3227fb76a6214e893be5015266f19
+timeCreated: 1459966743
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pSphere1
+    100000: pCylinder1
+    100002: //RootNode
+    100004: peanut_asteroid
+    100006: pSphere1
+    100008: pSphere2
+    100010: transform1
+    100012: transform2
+    100014: transform3
+    400000: pCylinder1
+    400002: //RootNode
+    400004: peanut_asteroid
+    400006: pSphere1
+    400008: pSphere2
+    400010: transform1
+    400012: transform2
+    400014: transform3
+    2300000: peanut_asteroid
+    3300000: peanut_asteroid
+    4300000: peanut_asteroid
     9500000: //RootNode
   materials:
     importMaterials: 1
