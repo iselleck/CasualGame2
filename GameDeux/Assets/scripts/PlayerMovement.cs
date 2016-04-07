@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
 
         // Acceleration - Orthogonal
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             if (currentVelocityOrthogonal < maxMoveSpeed)
             {
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         // Deceleration/Reverse - Orthogonal
-        else if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             if (currentVelocityOrthogonal > maxMoveSpeed)
             {
