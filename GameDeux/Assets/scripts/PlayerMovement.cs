@@ -4,16 +4,16 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
 
-    // Movement constants
-    public float cameraSensitivity = 90;
-    public float maxClimbSpeed = 4;
-    public float maxMoveSpeed = 10;
-    /* public float slowMoveFactor = 0.25f;
-	public float fastMoveFactor = 3; */
+	//object identifiers
+	public Rigidbody playerRigid;
+	public float cameraSensitivity = 90;
 
-    // We use these to handle momentum + max speed
-    public float currentVelocityOrthogonal = 0;
-    public float currentVelocityVertical = 0;
+    // Movement constants
+	public float hThrust;
+	public float vThrust;
+
+    public float fVel = 0;
+    public float hVel = 0;
 
     private float rotationX = 0.0f;
     private float rotationY = 0.0f;
@@ -21,56 +21,52 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Screen.lockCursor = true;
+		playerRigid = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-		//USE THE "END" KEY TO GET OUT OF SCREENLOCK -G
-		if (Input.GetKeyDown(KeyCode.End))
-		{
-			Screen.lockCursor = (Screen.lockCursor == false) ? true : false;
+		//USE THE "L" KEY TO GET OUT OF SCREENLOCK -G
+		if (Input.GetKeyDown(KeyCode.L)){
+			Screen.lockCursor = false;
 		}
+	
 		// Rotation
 		rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
 		rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
 		//rotationY = Mathf.Clamp (rotationY, -90, 90); EXTRA SPACE
 
-        transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up);
-        transform.localRotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
+        playerRigid.rotation = Quaternion.AngleAxis(rotationX, Vector3.up);
+        playerRigid.rotation *= Quaternion.AngleAxis(rotationY, Vector3.left);
 
-        // Acceleration - Orthogonal
-        if (Input.GetKey(KeyCode.W))
-        {
-            if (currentVelocityOrthogonal < maxMoveSpeed)
-            {
-                currentVelocityOrthogonal += 0.06f * Time.deltaTime;
-            }
-        }
-        // Deceleration/Reverse - Orthogonal
-        else if (Input.GetKey(KeyCode.S))
-        {
-            if (currentVelocityOrthogonal > maxMoveSpeed)
-            {
-                currentVelocityOrthogonal -= 0.06f * Time.deltaTime;
-            }
-        } // NOTE: Velocity seems to be reset to 0 when we stop accelerating/decelerating. Not very "space-y," but easier to control -- keep, or fix?
-		// I'm gonna fix the fuckin' shit out of this. -G
-
-        // Acceleration/Climbing - Vertical
-        if (Input.GetKey(KeyCode.R) && currentVelocityVertical < maxClimbSpeed)
-        {
-            currentVelocityVertical += 0.06f * Time.deltaTime;
-        }
-        // Deceleration/Descending - Vertical
-        else if (Input.GetKey(KeyCode.F) && currentVelocityVertical > -maxClimbSpeed)
-        {
-            currentVelocityVertical -= 0.06f * Time.deltaTime;
+        //FORWARDS
+        if (Input.GetKey(KeyCode.W)){
+			playerRigid.AddRelativeForce(Vector3.forward * hThrust);
         }
 
-        // Apply velocity to position
-        transform.position += transform.forward * Input.GetAxis("Vertical") * currentVelocityOrthogonal;
-        transform.position += transform.right * Input.GetAxis("Horizontal") * currentVelocityOrthogonal;
-        transform.position += transform.up * currentVelocityVertical;
+        //BACKWARDS
+        if (Input.GetKey(KeyCode.S)){
+			playerRigid.AddRelativeForce(Vector3.back * hThrust);
+        }
+		//STRAFE CONTROLS
+		if (Input.GetKey(KeyCode.A)){
+			playerRigid.AddRelativeForce(Vector3.left * hThrust);
+		}
 
+		if (Input.GetKey(KeyCode.D)){
+			playerRigid.AddRelativeForce(Vector3.right * hThrust);
+		}
+
+        //VERTICAL CONTROLS
+        if (Input.GetKey(KeyCode.R)){
+			playerRigid.AddRelativeForce(Vector3.up * vThrust);
+        }
+		
+        if (Input.GetKey(KeyCode.F)){
+			playerRigid.AddRelativeForce(Vector3.down * vThrust);
+        }
+
+		//ROTATION CONTROLS
+	
     }
 }
