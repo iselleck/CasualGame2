@@ -10,6 +10,8 @@ public class PlayerCollision : MonoBehaviour {
 
 	public GameObject myCanvas;
 
+	private string str;
+
 	void Start(){
 
 		phrases.Add ("Every day my metal friend shakes my bed at six AM");
@@ -36,13 +38,10 @@ public class PlayerCollision : MonoBehaviour {
 
 				int ran = Random.Range (0, 10);
 
-				Text chng = myCanvas.AddComponent<Text> ();
+				StartCoroutine (AnimateText(phrases[ran]));
 
-				chng.text = phrases [ran];
-
-				Font ArialFont = (Font)Resources.GetBuiltinResource (typeof(Font), "Arial.ttf");
-				chng.font = ArialFont;
-				chng.material = ArialFont.material;
+					//phrases [ran];
+		
 			}
 
 		};
@@ -57,6 +56,30 @@ public class PlayerCollision : MonoBehaviour {
 			} 
 		}
 		
+	}
+
+	IEnumerator AnimateText(string strComplete){
+		int i = 0;
+		str = "";
+		while( i < strComplete.Length ){
+
+			if (myCanvas.GetComponent<Text> () != null) {
+				Destroy (myCanvas.GetComponent<Text> ());
+			} else {
+				str += strComplete [i++];
+				Text chng = myCanvas.AddComponent<Text> ();
+
+				chng.text = str;
+				chng.alignment = TextAnchor.MiddleCenter;
+
+				Font ArialFont = (Font)Resources.GetBuiltinResource (typeof(Font), "Arial.ttf");
+				chng.font = ArialFont;
+				chng.material = ArialFont.material;
+			}
+
+			yield return new WaitForSeconds(0.01F);
+
+		}
 	}
 }
 
