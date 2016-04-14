@@ -13,5 +13,5 @@ public class billboard : MonoBehaviour {
 		transform.LookAt(Camera.main.transform.position, Vector3.up); //Basic billboarding 
 	}
 
-	v
+
 }
