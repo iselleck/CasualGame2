@@ -1,28 +1,37 @@
-Initialize engine version: 5.1.0f3 (ec70b008569d)
+Initialize engine version: 5.3.2f1 (e87ab445ead0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
+    Renderer: NVIDIA GeForce GTX 670M (ID=0x1213)
     Vendor:   NVIDIA
-    VRAM:     3072 MB
+    VRAM:     2997 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.043 seconds
-desktop: 1920x1080 120Hz; virtual: 3840x1080 at 0,0
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.089 seconds
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Github\CasualGame2\GameDeux\spacefriends_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\TheIronSky\Documents\CasualGame2\GameDeux\SpaceFriends_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 0.623492 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.169442 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 7150.
+Total: 0.833033 ms (FindLiveObjects: 0.199705 ms CreateObjectMapping: 0.171054 ms MarkObjects: 0.441747 ms  DeleteObjects: 0.019671 ms)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 12b88 -> priority: 1 
-  Thread -> id: 12c5c -> priority: 1 
+  Thread -> id: db8 -> priority: 1 
+  Thread -> id: 2eb0 -> priority: 1 

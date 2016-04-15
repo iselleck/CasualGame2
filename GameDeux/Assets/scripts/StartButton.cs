@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 [RequireComponent(typeof(UnityEngine.UI.Button))]
@@ -25,6 +25,6 @@ public class StartButton : MonoBehaviour
 	}
 
 	public void onClick(){
-		//SceneManager.LoadScene (1, LoadSceneMode.Single);
+		SceneManager.LoadScene (1, LoadSceneMode.Single);
 	}
 }
